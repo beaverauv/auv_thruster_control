@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package>
-  <name>auv_thruster_controller</name>
+  <name>auv_thruster_control</name>
   <version>0.0.0</version>
-  <description>The auv_thruster_controller package</description>
+  <description>The auv_thruster_control package</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
   <maintainer email="oliver@todo.todo">oliver</maintainer>
@@ -40,6 +40,12 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>message_generation</build_depend>
+    <!-- Use buildtool_depend for build tool packages: -->
+    <!--   <buildtool_depend>catkin</buildtool_depend> -->
+    <!-- Use run_depend for packages you need at runtime: -->
+  <run_depend>message_runtime</run_depend>
+
 
 
   <!-- The export tag contains other, unspecified, tags -->
