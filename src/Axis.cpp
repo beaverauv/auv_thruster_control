@@ -1,4 +1,4 @@
-#include <auv_thrust_control/Axis.hpp>
+#include <auv_thruster_control/Axis.hpp>
 
 Axis::Axis() {}
 

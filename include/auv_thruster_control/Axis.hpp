@@ -1,7 +1,7 @@
 #ifndef AXIS_H_
 #define AXIS_H_
 
-#include <auv_thrust_control/Thrusters.hpp>
+#include <auv_thruster_control/Thrusters.hpp>
 #include <ros/ros.h>
 #include <std_msgs/Float64.h>
 #include <std_msgs/String.h>

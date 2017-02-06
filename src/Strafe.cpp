@@ -1,4 +1,4 @@
-#include <auv_thrust_control/Strafe.hpp>
+#include <auv_thruster_control/Strafe.hpp>
 
 double Strafe::getEffortHeading() {
   int offset;

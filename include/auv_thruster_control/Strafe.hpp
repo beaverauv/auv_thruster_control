@@ -1,8 +1,8 @@
 #ifndef AXIS_TRANSLATION_H_
 #define AXIS_TRANSLATION_H_
 
-#include <auv_thrust_control/Axis.hpp>
-#include <auv_thrust_control/Thrusters.hpp>
+#include <auv_thruster_control/Axis.hpp>
+#include <auv_thruster_control/Thrusters.hpp>
 
 class Strafe {
 public:

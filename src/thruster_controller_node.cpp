@@ -1,5 +1,5 @@
-#include <auv_thrust_control/Axis.hpp>
-#include <auv_thrust_control/Strafe.hpp>
+#include <auv_thruster_control/Axis.hpp>
+#include <auv_thruster_control/Strafe.hpp>
 
 double radiansToDegrees(double r) { return r * 180 / M_PI; }
 double degreesToRadians(double d) { return d * M_PI / 180; }

@@ -1,4 +1,4 @@
-#include <auv_thrust_control/Thrusters.hpp>
+#include <auv_thruster_control/Thrusters.hpp>
 
 Thrusters::Thrusters() {}
 
