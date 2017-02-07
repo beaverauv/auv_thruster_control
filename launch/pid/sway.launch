@@ -1,0 +1,5 @@
+<launch>
+  <node name="sway" pkg="pid" type="controller" output="screen" >
+    <rosparam command="load" file="$(find auv_thruster_control)/pid/sway.yaml"/>
+  </node>
+</launch>

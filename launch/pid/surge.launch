@@ -1,0 +1,5 @@
+<launch>
+  <node name="surge" pkg="pid" type="controller" output="screen" >
+    <rosparam command="load" file="$(find auv_thruster_control)/pid/surge.yaml"/>
+  </node>
+</launch>

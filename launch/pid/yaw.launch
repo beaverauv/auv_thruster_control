@@ -1,0 +1,5 @@
+<launch>
+  <node name="yaw" pkg="pid" type="controller" output="screen" >
+    <rosparam command="load" file="$(find auv_thruster_control)/pid/yaw.yaml"/>
+  </node>
+</launch>

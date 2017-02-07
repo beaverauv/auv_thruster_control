@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find auv_thruster_control)/launch/thruster_control.launch" />
+
+  <include file="$(find auv_thruster_control)/launch/pid/surge.launch" />
+  <include file="$(find auv_thruster_control)/launch/pid/sway.launch" />
+  <include file="$(find auv_thruster_control)/launch/pid/heave.launch" />
+
+  <include file="$(find auv_thruster_control)/launch/pid/roll.launch" />
+  <include file="$(find auv_thruster_control)/launch/pid/pitch.launch" />
+  <include file="$(find auv_thruster_control)/launch/pid/yaw.launch" />
+
+</launch>

@@ -13,7 +13,7 @@ double Thrusters::getProportionalMultiplier(double max) {
   if (maxThruster <= max)
     return 1.0;
   else
-    return max / maxThruster; // shouldn't this be 100 / maxThruster  ?
+    return max / maxThruster;
 }
 
 void Thrusters::multiplyProportionally(double max) {
@@ -27,9 +27,15 @@ void Thrusters::removeNan() {
   back_left_ = (std::isnan(back_left_) ? 0.0 : back_left_);
 }
 
-void Thrusters::setAdvertiser(std::string topic, uint32_t queue_size) {
-  thruster_pub_ =
-      nh_.advertise<auv_thruster_control::ThrustStamped>(topic, queue_size);
+void Thrusters::publish(ros::Publisher pub) {
+  thrust_stamped_.header.stamp = ros::Time::now();
+
+  thrust_stamped_.thrust.fr = front_right_;
+  thrust_stamped_.thrust.fl = front_left_;
+  thrust_stamped_.thrust.br = back_right_;
+  thrust_stamped_.thrust.bl = back_left_;
+
+  pub.publish(thrust_stamped_);
 }
 
 std::string Thrusters::toString() {
@@ -37,6 +43,11 @@ std::string Thrusters::toString() {
   sprintf(values, "FR: %f, FL: %f, BR: %f, BL: %f", front_right_, front_left_,
           back_right_, back_left_);
   return std::string(values);
+}
+
+bool Thrusters::operator!=(const Thrusters &t2) {
+  return (front_right_ != t2.front_right_ && front_left_ != t2.front_left_ &&
+          back_right_ != t2.back_right_ && back_left_ != t2.back_left_);
 }
 
 Thrusters Thrusters::operator+(const Thrusters &other) {

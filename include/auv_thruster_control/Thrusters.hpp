@@ -28,7 +28,9 @@ public:
 
   void removeNan();
 
-  void setAdvertiser(std::string topic, uint32_t queue_size);
+  void publish(ros::Publisher pub);
+
+  bool operator!=(const Thrusters &t1);
 
   Thrusters operator+(const Thrusters &other);
   Thrusters operator+=(const Thrusters &other);
@@ -37,8 +39,8 @@ public:
 
   std::string toString();
 
-  ros::NodeHandle nh_;
-  ros::Publisher thruster_pub_;
+  auv_thruster_control::ThrustStamped thrust_stamped_;
+
   double front_right_, front_left_, back_right_, back_left_;
 };
 

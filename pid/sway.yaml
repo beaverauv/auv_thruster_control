@@ -1,0 +1,9 @@
+rate: 20
+upper_limit: 100
+lower_limit: -100
+windup_limit: 20
+cutoff_frequency: 0.25
+topic_from_controller: "sway/control_effort"
+topic_from_plant: "sway/plant_state"
+setpoint_topic: "sway/setpoint"
+topic_pid_enable: "sway/enable"

@@ -1,0 +1,5 @@
+<launch>
+  <node name="pitch" pkg="pid" type="controller" output="screen" >
+    <rosparam command="load" file="$(find auv_thruster_control)/pid/pitch.yaml"/>
+  </node>
+</launch>

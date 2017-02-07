@@ -39,15 +39,15 @@ include_directories(
 )
 
 
-add_executable(thrust_control_cont
+add_executable(thruster_control_node
   src/thruster_controller_node.cpp
   src/Axis.cpp
   src/Strafe.cpp
   src/Thrusters.cpp
 )
 
-target_link_libraries(thrust_control_cont ${catkin_LIBRARIES})
-add_dependencies(thrust_control_cont
+target_link_libraries(thruster_control_node ${catkin_LIBRARIES})
+add_dependencies(thruster_control_node
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS}
   auv_thruster_control_generate_messages_cpp
