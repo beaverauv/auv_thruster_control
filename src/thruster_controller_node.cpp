@@ -20,12 +20,12 @@ int main(int argc, char **argv) {
 
   auv_thruster_control::ThrustStamped thrust_stamped_;
 
-  axis_strafe_.surge_.setSubscriber("controlEffort_surge", 1);
-  axis_strafe_.sway_.setSubscriber("controlEffort_sway", 1);
-  axis_strafe_.heave_.setSubscriber("controlEffort_heave", 1);
-  axis_roll_.setSubscriber("controlEffort_roll", 1);
-  axis_pitch_.setSubscriber("controlEffort_pitch", 1);
-  axis_yaw_.setSubscriber("controlEffort_yaw", 1);
+  axis_strafe_.surge_.setSubscriber("surge/control_effort", 1);
+  axis_strafe_.sway_.setSubscriber("sway/control_effort", 1);
+  axis_strafe_.heave_.setSubscriber("heave/control_effort", 1);
+  axis_roll_.setSubscriber("roll/control_effort", 1);
+  axis_pitch_.setSubscriber("pitch/control_effort", 1);
+  axis_yaw_.setSubscriber("yaw/control_effort", 1);
 
   ros::Publisher thruster_xy_pub_ =
       nh_.advertise<auv_thruster_control::ThrustStamped>("thrust_xy", 1);
