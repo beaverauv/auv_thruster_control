@@ -2,6 +2,7 @@
 
 double Strafe::getEffortHeading() {
   int offset;
+  double heading_degrees;
   double sway = sway_.getEffort();
   double surge = surge_.getEffort();
 
@@ -12,7 +13,12 @@ double Strafe::getEffortHeading() {
   else
     offset = 360;
 
-  return radiansToDegrees(atan(sway / surge)) + offset;
+  double heading_radians = atan(sway / surge);
+
+  heading_degrees =
+      std::isnan(heading_radians) ? 0 : radiansToDegrees(heading_radians);
+
+  return heading_degrees + offset;
 }
 
 void Strafe::calcMagnitude() {
@@ -37,6 +43,7 @@ double Strafe::magnitudeSurgeOffset(double heading) {
 }
 
 Thrusters Strafe::getThrusters() {
+
   double heading = getEffortHeading();
   double mag_surge = magnitudeSurgeOffset(heading);
   double mag_sway = magnitudeSwayOffset(heading);

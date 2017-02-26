@@ -1,6 +1,6 @@
 #include <auv_thruster_control/Axis.hpp>
 
-Axis::Axis() {}
+Axis::Axis() : control_effort_(0) {}
 
 Axis::~Axis() {}
 

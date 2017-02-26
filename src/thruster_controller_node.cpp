@@ -75,12 +75,12 @@ int main(int argc, char **argv) {
 
     if (thrusters_xy_ != thrusters_xy_saved_) {
       thrusters_xy_.publish(thruster_xy_pub_);
-      ROS_INFO("XY: %s", thrusters_xy_.toString().c_str());
+      // ROS_INFO("XY: %s", thrusters_xy_.toString().c_str());
     }
 
     if (thrusters_z_ != thrusters_z_saved_) {
       thrusters_z_.publish(thruster_z_pub_);
-      ROS_INFO("Z: %s", thrusters_z_.toString().c_str());
+      // ROS_INFO("Z: %s", thrusters_z_.toString().c_str());
     }
 
     thrusters_xy_.publish(thruster_xy_pub_);

@@ -30,7 +30,7 @@ private:
 
   ros::NodeHandle nh_;
 
-  double control_effort_ = 0;
+  double control_effort_;
 };
 
 #endif
