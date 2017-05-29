@@ -1,4 +1,4 @@
-int32 fr
-int32 fl
-int32 br
-int32 bl
+int8 fr
+int8 fl
+int8 br
+int8 bl
