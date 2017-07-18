@@ -13,9 +13,9 @@ int main(int argc, char **argv) {
   Thrusters thrusters_strafe_, thrusters_heave_;
   Thrusters thrusters_pitch_, thrusters_roll_, thrusters_yaw_;
   Thrusters thrusters_xy_, thrusters_z_;
-  Thrusters thrusters_xy_saved_, thrusters_z_saved_;
+  //Thrusters thrusters_xy_saved_, thrusters_z_saved_;
 
-  double thrusters_xy__mult = .35;
+  double thrusters_xy__mult = 0.65;
   double thrusters_z_mult = 1.0;
 
   auv_thruster_control::ThrustStamped thrust_stamped_;
@@ -33,12 +33,9 @@ int main(int argc, char **argv) {
   ros::Publisher thruster_z_pub_ =
       nh_.advertise<auv_thruster_control::ThrustStamped>("thrust_z", 1);
 
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(50);
 
   while (ros::ok()) {
-    ros::spinOnce();
-
-    loop_rate.sleep();
 
     // XY Thrusters
 
@@ -73,22 +70,26 @@ int main(int argc, char **argv) {
 
     // ROS_INFO("\033[2J\033[1;1H");
 
-    if (thrusters_xy_ != thrusters_xy_saved_) {
-      thrusters_xy_.publish(thruster_xy_pub_);
+   // if (thrusters_xy_ != thrusters_xy_saved_) {
+     // thrusters_xy_.publish(thruster_xy_pub_);
       // ROS_INFO("XY: %s", thrusters_xy_.toString().c_str());
-    }
+   // }
 
-    if (thrusters_z_ != thrusters_z_saved_) {
-      thrusters_z_.publish(thruster_z_pub_);
+    //if (thrusters_z_ != thrusters_z_saved_) {
+     // thrusters_z_.publish(thruster_z_pub_);
       // ROS_INFO("Z: %s", thrusters_z_.toString().c_str());
-    }
+    //}
 
     thrusters_xy_.publish(thruster_xy_pub_);
     thrusters_z_.publish(thruster_z_pub_);
 
-    thrusters_xy_saved_ = thrusters_xy_;
-    thrusters_z_saved_ = thrusters_z_;
+    //thrusters_xy_saved_ = thrusters_xy_;
+    //thrusters_z_saved_ = thrusters_z_;
 
     // thruster_pub_.publish(thrust_stamped_);
+    ros::spinOnce();
+    loop_rate.sleep();
+
+
   }
 }
