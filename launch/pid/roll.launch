@@ -1,5 +1,5 @@
 <launch>
-  <node name="roll" pkg="pid" type="controller" output="screen" >
+  <node name="roll" pkg="pid" type="controller">
     <rosparam command="load" file="$(find auv_thruster_control)/pid/roll.yaml"/>
   </node>
 </launch>
