@@ -46,7 +46,13 @@ add_executable(thruster_control_node
   src/Thrusters.cpp
 )
 
+add_executable(thruster_test_node
+  src/thruster_test_node.cpp
+)
+
 target_link_libraries(thruster_control_node ${catkin_LIBRARIES})
+target_link_libraries(thruster_test_node ${catkin_LIBRARIES})
+
 add_dependencies(thruster_control_node
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS}

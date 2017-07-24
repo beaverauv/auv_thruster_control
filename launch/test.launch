@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="auv_thruster_control" type="thruster_test_node" name="$(anon heading)" output="screen">
+  </node>
+</launch>
